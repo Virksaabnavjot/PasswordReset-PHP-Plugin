@@ -1,0 +1,4 @@
+This file will contain all the resources used while working on this project.
+PHP Connect to MySQL https://www.w3schools.com/php/php_mysql_connect.asp
+How To Create Forgot Password In PHP & MySQLi https://www.youtube.com/watch?v=PHf4RzPYiMo
+How to create forget password recovery procedure in PHP http://www.phpgang.com/how-to-create-forget-password-form-in-php_381.html
