@@ -1,0 +1,1 @@
+CREATE TABLE `navsingh_rp`.`users` ( `id` INT(20) NOT NULL AUTO_INCREMENT , `name` VARCHAR(50) NOT NULL , `email` VARCHAR(240) NOT NULL , `password` VARCHAR(240) NOT NULL , `token` VARCHAR(240) , PRIMARY KEY (`id`)) ENGINE = MyISAM;
