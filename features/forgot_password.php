@@ -1,5 +1,4 @@
 <?php
-echo "Test Hello, forgot Password "
 //when the submit button is pressed this code will execute
 if(isset($_POST["forgotPassword"])){
   //make connection to the database
@@ -17,14 +16,20 @@ if(isset($_POST["forgotPassword"])){
       $token = str_shuffle($token); //shuffling
       $token = substr($token, 0, 9); //returing part of string
       $url = "http://demo.navsingh.org.uk/rp/features/reset_password.php?token=$token&email=$email";
-      echo "$url"; //test
+      echo "Check your email or use this link <a href='$url'> </br> Click me: $url</a>";
+      $mailBody = "Please follow this link to reset your password $url";
+
+      //sending the mail to the user
+      mail($email, "Password Reset Request", $mailBody, "From: nvirk@gymandnutrition.com\r\n");
+
+      //updating the database with the generated token
+      $conn->query("UPDATE users SET token='$token' WHERE email='$email'");
     }else{
       echo "This email does not exist in our database. Please Consider Signingup on the site.</br>";
     }
-
-
   }
 }
+//References: https://www.youtube.com/watch?v=PHf4RzPYiMo
 ?>
 
 <form action="index.php" method="POST">
