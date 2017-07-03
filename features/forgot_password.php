@@ -8,7 +8,21 @@ if(isset($_POST["forgotPassword"])){
   if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
     echo "The Email address is not valid, please check again.";
   }else{
-    //logic here
+    $email = $conn->real_escape_string($_POST["email"]);
+    $data = $conn->query("SELECT id FROM users WHERE email = '$email'");
+
+    if($data->num_rows > 0){
+      //defining a random string
+      $token = "qwertyuiopasdf0123456789";
+      $token = str_shuffle($token); //shuffling
+      $token = substr($token, 0, 9); //returing part of string
+      $url = "http://demo.navsingh.org.uk/rp/features/reset_password.php?token=$token&email=$email";
+      echo "$url"; //test
+    }else{
+      echo "This email does not exist in our database. Please Consider Signingup on the site.</br>";
+    }
+
+
   }
 }
 ?>
