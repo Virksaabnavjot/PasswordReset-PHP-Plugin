@@ -1,4 +1,3 @@
-# PHP-Password-Reset-Feature
-Password resetting feature implemented using PHP and SQL.
+# PRF (Password Reset Feature)
 
-Demo: http://demo.navsingh.org.uk/rp/
+Standalone password reset feature implemented using php, can be used with any web application to instantly provide it password reset capability with no hassle, great for non technical people
